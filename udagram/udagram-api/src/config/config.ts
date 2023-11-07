@@ -14,6 +14,6 @@ export const config = {
   jwt: {
     secret: process.env.JWT_SECRET,
   },
-  accessKeyId : "",
-  secretAccessKey : ""
+  accessKeyId : "ASIAWWU24ASOB2GZJ2PT",
+  secretAccessKey : "P8E/Eqgh4OPgCpTnPNHPlOwfz1ni1AdF5kceWnfR"
 };
