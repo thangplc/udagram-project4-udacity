@@ -1,6 +1,6 @@
 # Hosting a Full-Stack Application
 
-### **You can use you own project completed in previous courses or use the provided Udagram app for completing this final project.**       
+### **You can use you own project completed in previous courses or use the provided Udagram app for completing this final project.**
 
 ---
 
@@ -73,8 +73,44 @@ The e2e tests are using Protractor and Jasmine.
 
 ## Application deployed link 
 (The link below may be expired, please login again aws account)
-- Udagram Frontend: http://udagram-fe.s3-website-us-east-1.amazonaws.com
+- Udagram Frontend: http://udagram-fe.s3-website-us-east-1.amazonaws.com 
 - Udagram API: http://udagram-api.us-east-1.elasticbeanstalk.com/
 
-# udagram
-"# udagram_project" 
+## Project Setup
+1. Clone the project - `https://github.com/thangplc/udagram-udacity.git`
+2. Build & Run Frontend
+   1. Go into the project directory - `cd udagram/udagram-frontend`
+   2. Install the dependencies - `npm install`
+   3. Start the frontend - `npm run start`
+3. Build & Run Backend
+   1. Go into the project directory - `cd udagram/udagram-api`
+   2. Setup environment depend on `.env`
+   3. Install the dependencies - `npm install`
+   4. Start the backend - `npm run dev`
+4. In AWS, provision a publicly available RDS database running Postgres.
+5. In AWS, provision a s3 bucket for hosting the uploaded files.
+6. Setup ENV variables:
+
+```
+POSTGRES_HOST = "udagram.cpmbomf1vmkr.us-east-1.rds.amazonaws.com"
+POSTGRES_USERNAME = "postgres"
+POSTGRES_DB = "postgres"
+POSTGRES_PASSWORD = "postgres"
+PORT = 8080
+AWS_REGION = "us-east-1"
+AWS_PROFILE = "default"
+AWS_BUCKET = "udagram-fe"
+URL = "http://localhost:8080"
+JWT_SECRET = "hello"
+
+```
+
+
+## Documentation
+- Screenshots of the AWS configurations and the CircleCI are provided in `./docs/screenshots/`
+
+## Built With
+
+- [Angular](https://angular.io/) - Single Page Application Framework
+- [Node](https://nodejs.org) - Javascript Runtime
+- [Express](https://expressjs.com/) - Javascript API Framework
