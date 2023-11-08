@@ -13,10 +13,10 @@
     "dev": "npx ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "npx tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
+    "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp package.json www/package.json && rm -rf node_modules/",
+    "deploy": "npm run build && eb-prepare && eb-setup && eb deploy",
     "eb-prepare": "eb init && eb list && eb use udagram-api-dev",
     "eb-setup": "eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME POSTGRES_PASSWORD=$POSTGRES_PASSWORD POSTGRES_HOST=$POSTGRES_HOST POSTGRES_DB=$POSTGRES_DB AWS_BUCKET=$AWS_BUCKET AWS_REGION=$AWS_REGION AWS_PROFILE=$AWS_PROFILE JWT_SECRET=$JTW_SECRET URL=$URL",
-    "deploy": "npm run build && eb-prepare && eb-setup && eb deploy",
-    "build": "npm install . && npm run clean && tsc && cp -rf src/config www/config && cp package.json www/package.json && rm -rf node_modules/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
