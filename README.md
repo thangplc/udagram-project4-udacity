@@ -89,7 +89,7 @@ The e2e tests are using Protractor and Jasmine.
    4. Start the backend - `npm run dev`
 4. In AWS, provision a publicly available RDS database running Postgres.
 5. In AWS, provision a s3 bucket for hosting the uploaded files.
-6. Setup ENV variables:  
+6. Setup ENV variables:     
 
 ```
 POSTGRES_HOST = "udagram.cpmbomf1vmkr.us-east-1.rds.amazonaws.com"
